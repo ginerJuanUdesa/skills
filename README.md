@@ -22,10 +22,47 @@ Fetches, filters, and analyzes LLM inference benchmark data from [localmaxxing.c
 
 ## Install
 
+Replace `localmaxxing-benchmarks` with the skill you want to install.
+
+### Claude Code
+
 ```bash
-# Install a specific skill
 curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
 unzip -o /tmp/skill.zip -d ~/.claude/skills/
+# Restart Claude Code
+```
 
-# Restart Claude Code to load
+### OpenCode
+
+```bash
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -p /tmp/skill.zip '*/SKILL.md' >> ~/.opencode/instructions.md
+```
+
+### Codex CLI
+
+```bash
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -p /tmp/skill.zip '*/SKILL.md' >> AGENTS.md
+```
+
+### GitHub Copilot
+
+```bash
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -p /tmp/skill.zip '*/SKILL.md' >> .github/copilot-instructions.md
+```
+
+### Cursor
+
+```bash
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -p /tmp/skill.zip '*/SKILL.md' >> .cursor/rules/localmaxxing-benchmarks.mdc
+```
+
+### Windsurf
+
+```bash
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -p /tmp/skill.zip '*/SKILL.md' >> .windsurfrules
 ```
