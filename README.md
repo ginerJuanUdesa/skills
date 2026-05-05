@@ -22,20 +22,10 @@ Fetches, filters, and analyzes LLM inference benchmark data from [localmaxxing.c
 
 ## Install
 
-Requires [GitHub CLI](https://cli.github.com/).
-
 ```bash
-# 1. Install the gh-skill extension (one-time)
-gh extension install ginerJuanUdesa/gh-skill
+# Install a specific skill
+curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
+unzip -o /tmp/skill.zip -d ~/.claude/skills/
 
-# 2. Install a specific skill
-gh skill install ginerJuanUdesa/skills localmaxxing-benchmarks
-
-# 3. Install all skills at once
-gh skill install ginerJuanUdesa/skills
-
-# 4. Verify installation
-ls ~/.claude/skills/
-
-# 5. Restart Claude Code — skills load at startup
+# Restart Claude Code to load
 ```
