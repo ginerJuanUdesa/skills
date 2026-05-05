@@ -2,13 +2,20 @@
 
 Collection of Claude Code skills by ginerJuanUdesa.
 
-## Install a skill
+## Install
 
 ```bash
-npx ccskills add https://github.com/ginerJuanUdesa/skills
+# Install the gh extension (one-time)
+gh extension install ginerJuanUdesa/gh-skill
+
+# Install all skills from this repo
+gh skill install ginerJuanUdesa/skills
+
+# Install a specific skill
+gh skill install ginerJuanUdesa/skills localmaxxing-benchmarks
 ```
 
-This downloads all `.skill` files from the repo and extracts them to `~/.claude/skills/`. Restart Claude Code after installing.
+Restart Claude Code after installing.
 
 ## Skills
 
