@@ -29,10 +29,10 @@ Replace `localmaxxing-benchmarks` with the skill you want to install.
 curl -L https://github.com/ginerJuanUdesa/skills/raw/master/localmaxxing-benchmarks.skill -o /tmp/skill.zip
 
 # 2. Install for your AI tool
-unzip -o /tmp/skill.zip -d ~/.claude/skills/                          # Claude Code
-unzip -p /tmp/skill.zip '*/SKILL.md' >> ~/.opencode/instructions.md  # OpenCode
-unzip -p /tmp/skill.zip '*/SKILL.md' >> AGENTS.md                    # Codex CLI
+unzip -o /tmp/skill.zip -d ~/.claude/skills/                             # Claude Code
+unzip -p /tmp/skill.zip '*/SKILL.md' >> ~/.opencode/instructions.md      # OpenCode
+unzip -p /tmp/skill.zip '*/SKILL.md' >> AGENTS.md                        # Codex CLI
 unzip -p /tmp/skill.zip '*/SKILL.md' >> .github/copilot-instructions.md  # GitHub Copilot
-unzip -p /tmp/skill.zip '*/SKILL.md' >> .cursor/rules/skill.mdc      # Cursor
-unzip -p /tmp/skill.zip '*/SKILL.md' >> .windsurfrules               # Windsurf
+unzip -p /tmp/skill.zip '*/SKILL.md' >> .cursor/rules/skill.mdc          # Cursor
+unzip -p /tmp/skill.zip '*/SKILL.md' >> .windsurfrules                   # Windsurf
 ```
