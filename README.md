@@ -2,20 +2,54 @@
 
 Collection of Claude Code skills by ginerJuanUdesa.
 
-## Install
+## Tutorial: Installing Skills
+
+### 1. Install the `gh-skill` extension (one-time setup)
+
+You need the [GitHub CLI](https://cli.github.com/) installed and authenticated.
 
 ```bash
-# Install the gh extension (one-time)
 gh extension install ginerJuanUdesa/gh-skill
+```
 
-# Install all skills from this repo
+Verify it works:
+
+```bash
+gh skill --help
+```
+
+### 2. Install skills
+
+**Install all skills from this repo:**
+
+```bash
 gh skill install ginerJuanUdesa/skills
+```
 
-# Install a specific skill
+**Install a specific skill:**
+
+```bash
 gh skill install ginerJuanUdesa/skills localmaxxing-benchmarks
 ```
 
-Restart Claude Code after installing.
+Skills are extracted to `~/.claude/skills/`.
+
+### 3. Restart Claude Code
+
+Skills are loaded at startup. Restart Claude Code after installing.
+
+```bash
+# Verify skill was installed
+ls ~/.claude/skills/
+```
+
+### 4. Use the skill
+
+Once restarted, Claude will automatically use the skill when relevant triggers appear in your prompts. For example, with `localmaxxing-benchmarks` installed, just ask:
+
+> "Show me benchmark results for Qwen3-8B on discrete GPUs"
+
+---
 
 ## Skills
 
