@@ -6,17 +6,39 @@ Collection of Claude Code skills by ginerJuanUdesa.
 
 ### `localmaxxing-benchmarks`
 
-Fetches, filters, and analyzes LLM inference benchmark data from [localmaxxing.com](https://localmaxxing.com).
+Fetches, filters, analyzes, and submits LLM inference benchmark data on [localmaxxing.com](https://localmaxxing.com).
 
-**Triggers:** "get benchmarks", "fetch benchmark results", "show me benchmark data for [model]", "compare GPU performance", "find speculative decoding benchmarks", "what's the fastest hardware for [model]", "scrape localmaxxing", or any mention of localmaxxing.com.
+**Triggers:** "get benchmarks", "fetch benchmark results", "show me benchmark data for [model]", "compare GPU performance", "find speculative decoding benchmarks", "what's the fastest hardware for [model]", "submit a benchmark", "run a benchmark", "scrape localmaxxing", or any mention of localmaxxing.com.
 
 **Capabilities:**
-- Queries `https://localmaxxing.com/api/benchmarks` (public, no auth)
-- Filters by model (`hfId`), hardware class, GPU name, chip vendor/family, KV cache dtype, attention backend, date ranges, username
-- Handles pagination
-- Includes Python helpers and curl recipes
+- Submit benchmarks via `POST /api/benchmarks` (Bearer API key auth)
+- Dry-run validation before submitting
+- Query `GET /api/benchmarks` — filter by model, hardware, GPU, KV cache dtype, attention backend, date ranges, username, spec/MTP flags
+- Query `GET /api/leaderboard` — ranked results with VRAM tier, model family, MoE, OS, backend filters
+- Browse/search models via `GET /api/models` and `GET /api/models/search`
+- Full hardware schemas: `DISCRETE_GPU`, `UNIFIED` (Apple Silicon/APU), `CPU_ONLY`
+- Full `engineFlags` schema including spec decoding, MTP, flash attention, KV cache quant, concurrency
+- Evals API: list suites, submit runs, dry-run, execute custom suites
+- API key management: create, list, revoke
+- Benchmark methodology guidance and field constraints
 
-**Key params:** `hfId`, `hwClass` (`DISCRETE_GPU`/`UNIFIED`/`CPU_ONLY`), `gpuName`, `specOnly`, `mtpOnly`, `dateFrom`, `dateTo`, `limit`, `offset`
+**Key params:** `hfId`, `hwClass` (`DISCRETE_GPU`/`UNIFIED`/`CPU_ONLY`), `gpuName`, `specOnly`, `mtpOnly`, `dateFrom`, `dateTo`, `limit`, `offset`, `memTier`, `hardwareName`, `modelFamily`, `isMoE`, `since`
+
+---
+
+### `llm-tldr`
+
+Guides agents to use the [llm-tldr](https://github.com/parcadei/llm-tldr) MCP server for token-efficient code analysis (up to 99% token reduction).
+
+**Triggers:** any code navigation, refactoring, debugging, or impact analysis task on an unfamiliar or large codebase.
+
+**Capabilities:**
+- Decision framework: prompts agent to evaluate whether tldr tools apply to the current task
+- MCP activation check: instructs agent to prompt user if `tldr` MCP is not active
+- Situation → command cheatsheet covering all tldr tools
+- Explains when to combine commands (e.g. `impact` + `calls` before changing a signature)
+
+**Key commands:** `context`, `impact`, `semantic`, `slice`, `dfg`, `cfg`, `arch`, `calls`, `dead`, `importers`, `warm`
 
 ---
 
