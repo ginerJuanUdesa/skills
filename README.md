@@ -26,22 +26,6 @@ Fetches, filters, analyzes, and submits LLM inference benchmark data on [localma
 
 ---
 
-### `llm-tldr`
-
-Guides agents to use the [llm-tldr](https://github.com/parcadei/llm-tldr) MCP server for token-efficient code analysis (up to 99% token reduction).
-
-**Triggers:** any code navigation, refactoring, debugging, or impact analysis task on an unfamiliar or large codebase.
-
-**Capabilities:**
-- Decision framework: prompts agent to evaluate whether tldr tools apply to the current task
-- MCP activation check: instructs agent to prompt user if `tldr` MCP is not active
-- Situation → command cheatsheet covering all tldr tools
-- Explains when to combine commands (e.g. `impact` + `calls` before changing a signature)
-
-**Key commands:** `context`, `impact`, `semantic`, `slice`, `dfg`, `cfg`, `arch`, `calls`, `dead`, `importers`, `warm`
-
----
-
 ## Install
 
 Replace `localmaxxing-benchmarks` with the skill you want to install.
