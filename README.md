@@ -40,6 +40,22 @@ Maintains a shared port ledger at `/home/ports.md` so port bindings never collid
 
 ---
 
+### `prlist`
+
+Produces a per-repo table of open pull requests that still need reviewer attention across the git repos in your working dirs.
+
+**Triggers:** "list PRs", "review queue", "what PRs need attention", "prlist", or similar.
+
+**Capabilities:**
+- Discovers git repos (up to 5 levels deep) and resolves each to its GitHub `owner/name`
+- Lean single `gh pr list` fetch per repo (no bulk `commits`/`comments` to protect context and dodge GraphQL node limits)
+- Filters out drafts, your own PRs, and PRs already `APPROVED` by any reviewer (not just yourself — covers repos with no branch protection where `reviewDecision` stays empty)
+- `CHANGES_REQUESTED` tie-break: keeps a PR only if the author pushed a commit or replied after the last blocking review
+- Emits one markdown table per repo with PR number, poster, title, status, and requested reviewers
+- Read-only: never comments on, approves, closes, or merges PRs
+
+---
+
 ## Install
 
 Replace `localmaxxing-benchmarks` with the skill you want to install.
